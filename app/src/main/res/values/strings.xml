@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">BoatApp</string>
+    <string name="title_activity_image_fullscreen">ImageFullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="BR01">BR01</string>
+    <string name="BR02">BR02</string>
+    <string name="BR03">BR03</string>
+    <string name="BR04">BR04</string>
+    <string name="SR01">SR01</string>
+    <string name="SR02">SR02</string>
+    <string name="SR03">SR03</string>
+
+    <string name="BR01_expl">Boat Response 1</string>
+    <string name="BR02_expl">Boat Response 2</string>
+    <string name="BR03_expl">Boat Response 3</string>
+    <string name="BR04_expl">Boat Response 4</string>
+    <string name="SR01_expl">Server Response 1</string>
+    <string name="SR02_expl">Server Response 2</string>
+    <string name="SR03_expl">Server Response 3</string>
+
+    <string name="BR01_descr">Motor power has changed.\n</string>
+    <string name="BR02_descr">Servo on the boat moved successfully.</string>
+    <string name="BR03_descr">An image has been requested - attempting to take a picture.</string>
+    <string name="BR04_descr">The picture has been successfully taken and sent to the server.</string>
+    <string name="SR01_descr">Boat has successfully connected to the server.</string>
+    <string name="SR02_descr">Boat has disconnected from the server. Check connection.</string>
+    <string name="SR03_descr">Something went wrong! Check the connection.</string>
+
+</resources>
