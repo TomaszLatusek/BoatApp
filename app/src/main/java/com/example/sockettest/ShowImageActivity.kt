@@ -1,14 +1,15 @@
 package com.example.sockettest
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.Window
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlin.math.max
 import kotlin.math.min
+
 
 class ShowImageActivity : AppCompatActivity() {
     private lateinit var scaleGestureDetector: ScaleGestureDetector

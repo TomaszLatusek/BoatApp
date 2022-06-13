@@ -63,6 +63,13 @@ class ImageUtils {
                 .use { it?.getResultsFromCursor() ?: listOf() }
         }
 
+        fun getLastImageFromFolder(context: Context, folder: String): File {
+
+            val selection = MediaStore.Images.Media.DATA + " LIKE ?"
+
+            return queryUri(context, MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection, arrayOf("%$folder/%"))
+                .use { it?.getResultsFromCursor() ?: listOf() }.last()
+        }
 
         private fun queryUri(context: Context, uri: Uri, selection: String?, selectionArgs: Array<String>?): Cursor? {
             return context.contentResolver.query(

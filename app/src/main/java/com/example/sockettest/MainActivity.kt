@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
         val window: Window = this@MainActivity.window
         window.navigationBarColor = ContextCompat.getColor(this@MainActivity, R.color.darker_grey)
 
-        if (savedInstanceState != null) {
-            logs = savedInstanceState.getParcelableArrayList<MyLog>("SAVED_RECYCLER_VIEW_DATASET_ID") as ArrayList<MyLog>
-        }
+//        if (savedInstanceState != null) {
+//            logs = savedInstanceState.getParcelableArrayList<MyLog>("SAVED_RECYCLER_VIEW_DATASET_ID") as ArrayList<MyLog>
+//        }
 
         val adapter = LogRecyclerAdapter(this, logs)
         console.adapter = adapter
@@ -64,10 +64,19 @@ class MainActivity : AppCompatActivity() {
 
         btnServo.setOnClickListener {
             mSocket.emit("controlServo")
+            Log.d("LOGG", logs.size.toString())
         }
 
         btnGallery.setOnClickListener {
             val intent = Intent(this, GalleryActivity::class.java)
+            startActivity(intent)
+        }
+
+        image.setOnClickListener {
+
+            val intent = Intent(this, ShowImageActivity::class.java).apply {
+                putExtra("imageFile", ImageUtils.getLastImageFromFolder(this@MainActivity, "BoatApp"))
+            }
             startActivity(intent)
         }
 
@@ -164,8 +173,6 @@ class MainActivity : AppCompatActivity() {
                     extra = jsonarray[3] as String
                 }
 
-                Log.d("LOGG", jsonarray.length().toString())
-
                 runOnUiThread {
                     logs.add(MyLog(time, log, msg, extra))
                     adapter.notifyDataSetChanged()
@@ -176,8 +183,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putParcelableArrayList("SAVED_RECYCLER_VIEW_DATASET_ID", logs)
-        super.onSaveInstanceState(outState)
-    }
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//        outState.putParcelableArrayList("SAVED_RECYCLER_VIEW_DATASET_ID", logs)
+//    }
 }
